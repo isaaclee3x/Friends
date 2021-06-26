@@ -23,14 +23,19 @@ struct ContentView: View {
                           slothImage: "sloth1")]
     
     var body: some View {
-        List(friends) { friends in
-            Image(systemName: friends.icon)
-            VStack {
-                Text(friends.name)
-                    .bold()
-                Text(friends.school)
+        NavigationView {
+            List(friends) { friends in
+                NavigationLink(destination: FriendDetailView(friend: friends)){
+                    Image(systemName: friends.icon)
+                    
+                    VStack(alignment: .leading) {
+                        Text(friends.name)
+                            .bold()
+                        Text(friends.school)
+                    }
+                }
             }
-            
+            .navigationTitle("Friends")
         }
     }
 }
@@ -40,3 +45,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
