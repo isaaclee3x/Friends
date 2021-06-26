@@ -32,6 +32,10 @@ struct FriendDetailView: View {
                 .shadow(radius: 6)
                 .padding(.bottom, -250 / 2)
             
+            Text("\(Image(systemName: friend.icon)) \(friend.school)")
+                .font(.system(size: 24))
+                .padding()
+            
             Spacer()
         }
         .navigationTitle(friend.name)
