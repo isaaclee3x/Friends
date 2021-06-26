@@ -12,8 +12,29 @@ struct FriendDetailView: View {
     var friend: Friend
     
     var body: some View {
-        Text(friend.school)
-            .navigationTitle(friend.name)
+        VStack(spacing: 0) {
+            Image(friend.slothImage)
+                .resizable()
+                .scaledToFill()
+                .frame(height:300)
+            
+            Image(friend.name)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 250, height: 250)
+                .mask(Circle())
+                .overlay(
+                    Circle()
+                        .stroke(lineWidth: 8)
+                        .foregroundColor(.white)
+                )
+                .offset(x: 0, y: -250 / 2)
+                .shadow(radius: 6)
+                .padding(.bottom, -250 / 2)
+            
+            Spacer()
+        }
+        .navigationTitle(friend.name)
     }
 }
 
