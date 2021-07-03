@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FriendDetailView: View {
-    
+
     var friend: Friend
     
     var body: some View {
@@ -36,6 +36,8 @@ struct FriendDetailView: View {
                 .font(.system(size: 24))
                 .padding()
             
+            
+
             Spacer()
         }
         .navigationTitle(friend.name)
@@ -44,6 +46,6 @@ struct FriendDetailView: View {
 
 struct FriendDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendDetailView(friend: Friend(name: "Jia Chen", icon: "pc", school: "Tinkercademy", slothImage: "sloth1"))
+        FriendDetailView(friend: (Friend(name: "Jia Chen", icon: "pc", school: "Tinkercademy", slothImage: "sloth1")))
     }
 }
